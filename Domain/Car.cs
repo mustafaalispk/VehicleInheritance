@@ -11,12 +11,17 @@ namespace VehicleInheritance.Domain
      public string RegistrationNumber { get; }
      public string Brand { get; }
      public string Model { get; }
+     public FuelType FuelType { get; }
+     public CarType CarType { get; }     
      
-     public Car(string registrationNumber, string brand, string model)
+     public Car(string registrationNumber, string brand, string model, FuelType fuelType, CarType carType)
      {
        RegistrationNumber = registrationNumber;
        Brand = brand;
        Model = model;
+       FuelType = fuelType;
+       CarType = carType;
      }
     }
+    
 }

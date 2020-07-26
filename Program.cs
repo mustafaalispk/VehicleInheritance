@@ -8,7 +8,7 @@ namespace VehicleInheritance
     {
         static void Main(string[] args)
         {
-            Car teslaModel3 = new Car("kbh252", "Tesla", "3");
+            Car teslaModel3 = new Car(brand: "Tesla", model: "3", registrationNumber: "kbh252");
 
 
         }
