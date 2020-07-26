@@ -1,4 +1,5 @@
-﻿namespace VehicleInheritance.Domain
+﻿using static System.Console;
+namespace VehicleInheritance.Domain
 {
     class Truck : Vehicle
     {
@@ -16,14 +17,14 @@
 
         }
             
-        public void Accelerate()
+        public override void Accelerate()
         {
-            Velocity += 2;
+            Velocity += 3;
 
         }
-        public void Break()
+        public override void Break()
         {
-            Velocity -= 2;
+            Velocity -= 3;
         }
 
         public void Load(string cargo)
@@ -36,5 +37,6 @@
             return cargoHold[nextAvailablePosition--];
             
         }
+        
     }
 }

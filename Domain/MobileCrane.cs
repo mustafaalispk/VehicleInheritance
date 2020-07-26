@@ -1,5 +1,7 @@
-﻿namespace VehicleInheritance.Domain
+﻿using static System.Console;
+namespace VehicleInheritance.Domain
 {
+
     class MobileCrane : Vehicle
     {
         // Property kan inte lagra data, det är field som lagra data.
@@ -25,14 +27,19 @@
             isLifting = false;
         }
 
-        public void Accelerate()
+        public override void Accelerate()
         {
             Velocity += 1;
 
         }
-        public void Break()
+        public override void Break()
         {
             Velocity -= 1;
+        }
+
+        public override string ToString()
+        {
+            return ($"Car {Brand} {Model} {RegistrationNumber} {LiftCapacity}");
         }
 
     }

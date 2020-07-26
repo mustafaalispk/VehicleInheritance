@@ -1,4 +1,5 @@
-﻿namespace VehicleInheritance.Domain
+﻿using static System.Console;
+namespace VehicleInheritance.Domain
 {
     class Car : Vehicle
     {
@@ -7,12 +8,12 @@
         public CarType CarType { get; }
 
         private bool isTrunkOpen;
-        public Car(string brand, string model, string registrationNumber, FuelType fuelType, CarType carType)  
-          :base (brand, model, registrationNumber, fuelType)
+        public Car(string brand, string model, string registrationNumber, CarType carType)  
+          :base (brand, model, registrationNumber, FuelType.Electrical)
             
         {
             
-            CarType = carType;
+            CarType = carType;            
             
         }
 
@@ -26,14 +27,19 @@
             isTrunkOpen = false;
         }
 
-        public void Accelerate()
+        public override void Accelerate()
         {
             Velocity += 5;
-
         }
-        public void Break()
+
+        public override void Break()
         {
             Velocity -= 5;
+        }
+
+        public override string ToString()
+        {
+            return ($"Car {Brand} {Model} {RegistrationNumber} {CarType}");
         }
     }
 
