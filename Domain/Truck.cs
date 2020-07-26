@@ -1,25 +1,17 @@
 ﻿namespace VehicleInheritance.Domain
 {
-    class Truck
+    class Truck : Vehicle
     {
         // Property kan inte lagra data, det är field som lagra data.
         // Property skapar upp själv en auto-implemented backing field i minnet 
-        public string RegistrationNumber { get; }
-        public string Brand { get; }
-        public string Model { get; }
-        public FuelType FuelType { get; }       
-        public ushort Velocity { get; private set; }
-
+      
         public string[] cargoHold;
 
         public byte nextAvailablePosition;
      
         public Truck(string brand, string model, string registrationNumber, FuelType fuelType, byte cargoHoldCapacity)
-        {
-            RegistrationNumber = registrationNumber;
-            Brand = brand;
-            Model = model;
-            FuelType = fuelType;
+            :base (brand, model,registrationNumber,fuelType)
+        {            
             cargoHold = new string[cargoHoldCapacity];
 
         }
