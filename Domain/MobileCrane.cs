@@ -1,29 +1,36 @@
 ﻿namespace VehicleInheritance.Domain
 {
-    class Truck
+    class MobileCrane
     {
         // Property kan inte lagra data, det är field som lagra data.
         // Property skapar upp själv en auto-implemented backing field i minnet 
         public string RegistrationNumber { get; }
         public string Brand { get; }
         public string Model { get; }
-        public FuelType FuelType { get; }       
-        public ushort Velocity { get; private set; }
+        public FuelType FuelType { get; }
+        public ushort Velocity { get; private set; }          
+        public ushort LiftCapacity { get; }
 
-        public string[] cargoHold;
-
-        public byte nextAvailablePosition;
-     
-        public Truck(string brand, string model, string registrationNumber, FuelType fuelType, byte cargoHoldCapacity)
+        private bool isLifting;
+        public MobileCrane(string brand, string model, string registrationNumber, FuelType fuelType, ushort liftCapacity)
         {
             RegistrationNumber = registrationNumber;
             Brand = brand;
             Model = model;
             FuelType = fuelType;
-            cargoHold = new string[cargoHoldCapacity];
+            LiftCapacity = liftCapacity;
 
         }
-            
+
+        public void Lift()
+        {
+            isLifting = true;
+        }
+        public void Drop()
+        {
+            isLifting = false;
+        }
+
         public void Accelerate()
         {
             Velocity += 2;
@@ -34,15 +41,5 @@
             Velocity -= 2;
         }
 
-        public void Load(string cargo)
-        {
-            cargoHold[nextAvailablePosition++] = cargo;
-        }
-
-        public string Unload()
-        {
-            return cargoHold[nextAvailablePosition--];
-            
-        }
     }
 }
