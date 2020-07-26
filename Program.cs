@@ -8,9 +8,8 @@ namespace VehicleInheritance
     {
         static void Main(string[] args)
         {
-            Car teslaModel3 = new Car(brand: "Tesla", model: "3", registrationNumber: "kbh252");
-
-
+            Car teslaModel3 = new Car(brand: "Tesla", model: "3", registrationNumber: "kbh252",fuelType: FuelType.Diesel, carType: CarType.Sedan);
+                     
         }
     }
 }
